@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjh68osr5ekw3"]
+
+[ext_resource type="Script" uid="uid://bjgqrafp3kavs" path="res://scenes/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://dxa85dnvsa64n" path="res://assets/demon-layers/parallax-demon-woods-bg.png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://bmtd2jk0oc3si" path="res://assets/demon-layers/parallax-demon-woods-mid-trees.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://dwusgjxokx0xk" path="res://assets/main-menu-logo.png" id="3_bqqt6"]
+[ext_resource type="FontFile" uid="uid://bomvshgygm3v" path="res://assets/fonts/Toasty Milk.ttf" id="5_8ln24"]
+
+[sub_resource type="FontVariation" id="FontVariation_rtw2f"]
+base_font = ExtResource("5_8ln24")
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_bqqt6")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_right = 1148.0
+offset_bottom = 652.0
+texture = ExtResource("2_wu84c")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8ln24")
+expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -177.0
+offset_right = 416.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bqqt6")
+
+[node name="main" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 78.0
+offset_right = 109.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0.806057, 0.595836, 0.236402, 1)
+theme_override_colors/font_hover_color = Color(0.806057, 0.595836, 0.236402, 1)
+theme_override_fonts/font = SubResource("FontVariation_rtw2f")
+theme_override_font_sizes/font_size = 37
+text = "START"
+
+[connection signal="pressed" from="main" to="." method="_on_main_pressed"]
