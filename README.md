@@ -1,4 +1,6 @@
 ## banana jam
+![HackaTime Badge](https://hackatime-badge.hackclub.com/U07CMBTF5K9/banana-jam)
+
 collect as many bananas as you can while avoiding the hard-to-spot rocks!
 
 basically, my first godot game. i learnt a bunch of stuff about scenes, layers, and hosting games. pretty simple but i had a fun time (~7 hrs!) making it. plus, it's got a parallax background! that's a win.
