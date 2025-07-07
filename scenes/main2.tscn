@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://dndn53rr6gkd5"]
+[gd_scene load_steps=18 format=4 uid="uid://dndn53rr6gkd5"]
 
 [ext_resource type="Texture2D" uid="uid://d1a2ukxs5s71w" path="res://assets/desert/desert_sky.png" id="1_f31b2"]
-[ext_resource type="Texture2D" uid="uid://bosyqun8uxi4k" path="res://assets/Terrain (16x16).png" id="2_0rof8"]
+[ext_resource type="Texture2D" uid="uid://bosyqun8uxi4k" path="res://assets/images/Terrain (16x16).png" id="2_0rof8"]
 [ext_resource type="Texture2D" uid="uid://dimesw8avfsxr" path="res://assets/desert/desert_mountain.png" id="2_lhxgd"]
 [ext_resource type="Texture2D" uid="uid://bhlv7sqkhyqm7" path="res://assets/desert/desert_cloud.png" id="3_r8a5h"]
 [ext_resource type="PackedScene" uid="uid://cm6vxdkvb54v" path="res://scenes/main_character.tscn" id="3_w8cd7"]
@@ -9,9 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://dgl52ai1or2ul" path="res://scenes/collectable.tscn" id="5_hi5em"]
 [ext_resource type="PackedScene" uid="uid://bt42rn5y0qujl" path="res://scenes/end.tscn" id="6_bbj40"]
 [ext_resource type="Script" uid="uid://cnqf5kw8y3ncq" path="res://game_manager.gd" id="7_4fcfw"]
-[ext_resource type="Texture2D" uid="uid://dpqcjacyq25ud" path="res://assets/lives-heart.png" id="9_kxs5y"]
+[ext_resource type="Texture2D" uid="uid://dpqcjacyq25ud" path="res://assets/images/lives-heart.png" id="9_kxs5y"]
 [ext_resource type="PackedScene" uid="uid://c1voxt3r51q5v" path="res://scenes/you_won.tscn" id="9_lhxgd"]
 [ext_resource type="FontFile" uid="uid://bomvshgygm3v" path="res://assets/fonts/Toasty Milk.ttf" id="11_lhxgd"]
+[ext_resource type="AudioStream" uid="uid://be0upv3jigekx" path="res://assets/music/lose.wav" id="13_r8a5h"]
+[ext_resource type="AudioStream" uid="uid://baebs2h5dtxyc" path="res://assets/music/coin_2-89099.mp3" id="14_pmkxm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
 texture = ExtResource("2_0rof8")
@@ -481,6 +483,7 @@ offset_right = 113.5
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="Heart" type="TextureRect" parent="UI/Panel2/HBoxContainer"]
 layout_mode = 2
@@ -496,3 +499,10 @@ expand_mode = 2
 layout_mode = 2
 texture = ExtResource("9_kxs5y")
 expand_mode = 2
+
+[node name="LosingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_r8a5h")
+
+[node name="BananaGain" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_pmkxm")
+volume_db = -3.962

@@ -1,20 +1,22 @@
-[gd_scene load_steps=20 format=4 uid="uid://c7yeli8sn4m47"]
+[gd_scene load_steps=22 format=4 uid="uid://c7yeli8sn4m47"]
 
 [ext_resource type="Texture2D" uid="uid://dxa85dnvsa64n" path="res://assets/demon-layers/parallax-demon-woods-bg.png" id="1_a8y0u"]
-[ext_resource type="Texture2D" uid="uid://dvin17onu4kl6" path="res://assets/Pink.png" id="1_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dvin17onu4kl6" path="res://assets/images/Pink.png" id="1_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://b48yu7tsppx5a" path="res://assets/demon-layers/parallax-demon-woods-far-trees.png" id="2_jkv2x"]
-[ext_resource type="Texture2D" uid="uid://bosyqun8uxi4k" path="res://assets/Terrain (16x16).png" id="2_tipki"]
+[ext_resource type="Texture2D" uid="uid://bosyqun8uxi4k" path="res://assets/images/Terrain (16x16).png" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://cm6vxdkvb54v" path="res://scenes/main_character.tscn" id="3_85g3d"]
 [ext_resource type="Texture2D" uid="uid://b350btcv5fm3d" path="res://assets/demon-layers/parallax-demon-woods-close-trees.png" id="3_jbj1t"]
 [ext_resource type="Script" uid="uid://dg275g48ssydg" path="res://scenes/main_character.gd" id="4_choun"]
 [ext_resource type="PackedScene" uid="uid://dgl52ai1or2ul" path="res://scenes/collectable.tscn" id="5_ya4ey"]
-[ext_resource type="Texture2D" uid="uid://cehdedvf7723h" path="res://assets/branches.png" id="6_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://cehdedvf7723h" path="res://assets/images/branches.png" id="6_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bt42rn5y0qujl" path="res://scenes/end.tscn" id="6_eb6dy"]
 [ext_resource type="Script" uid="uid://cnqf5kw8y3ncq" path="res://game_manager.gd" id="7_trceg"]
 [ext_resource type="PackedScene" uid="uid://cq55l74risjf" path="res://scenes/rocks.tscn" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://dndn53rr6gkd5" path="res://scenes/main2.tscn" id="11_a8y0u"]
-[ext_resource type="Texture2D" uid="uid://dpqcjacyq25ud" path="res://assets/lives-heart.png" id="13_trceg"]
+[ext_resource type="Texture2D" uid="uid://dpqcjacyq25ud" path="res://assets/images/lives-heart.png" id="13_trceg"]
 [ext_resource type="FontFile" uid="uid://bomvshgygm3v" path="res://assets/fonts/Toasty Milk.ttf" id="14_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://be0upv3jigekx" path="res://assets/music/lose.wav" id="16_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://baebs2h5dtxyc" path="res://assets/music/coin_2-89099.mp3" id="17_muem4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
 texture = ExtResource("2_tipki")
@@ -561,3 +563,11 @@ texture_filter = 1
 layout_mode = 2
 texture = ExtResource("13_trceg")
 expand_mode = 2
+
+[node name="LosingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_jbj1t")
+volume_db = 10.895
+
+[node name="BananaGain" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_muem4")
+volume_db = -2.972

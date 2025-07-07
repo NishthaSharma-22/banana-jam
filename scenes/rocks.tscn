@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cq55l74risjf"]
+[gd_scene load_steps=22 format=3 uid="uid://cq55l74risjf"]
 
 [ext_resource type="Script" uid="uid://bkta8ohxillb5" path="res://scenes/rocks.gd" id="1_f73mp"]
-[ext_resource type="Texture2D" uid="uid://cs6rjyk1dyfva" path="res://assets/Rock1_Idle (38x34).png" id="1_ooke6"]
+[ext_resource type="Texture2D" uid="uid://cs6rjyk1dyfva" path="res://assets/images/Rock1_Idle (38x34).png" id="1_ooke6"]
+[ext_resource type="AudioStream" uid="uid://cguiwfc50f36x" path="res://assets/music/mixkit-losing-bleeps-2026.wav" id="3_njeqb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ya4ey"]
 atlas = ExtResource("1_ooke6")
@@ -148,5 +149,24 @@ shape = SubResource("RectangleShape2D_f73mp")
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_njeqb")
 script = SubResource("GDScript_njeqb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_njeqb")
+volume_db = -8.914
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -62.0
+offset_right = 175.5
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

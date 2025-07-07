@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://cm6vxdkvb54v"]
+[gd_scene load_steps=31 format=3 uid="uid://cm6vxdkvb54v"]
 
-[ext_resource type="Texture2D" uid="uid://bwc8upvko6cej" path="res://assets/Jump (32x32).png" id="1_nrcqd"]
-[ext_resource type="Texture2D" uid="uid://jg0mjfqsmm75" path="res://assets/Idle (32x32).png" id="1_tqm6u"]
-[ext_resource type="Texture2D" uid="uid://b4yvnvnmpf0ht" path="res://assets/Run (32x32).png" id="3_e6tc2"]
+[ext_resource type="Texture2D" uid="uid://bwc8upvko6cej" path="res://assets/images/Jump (32x32).png" id="1_nrcqd"]
+[ext_resource type="Texture2D" uid="uid://jg0mjfqsmm75" path="res://assets/images/Idle (32x32).png" id="1_tqm6u"]
+[ext_resource type="Texture2D" uid="uid://b4yvnvnmpf0ht" path="res://assets/images/Run (32x32).png" id="3_e6tc2"]
+[ext_resource type="AudioStream" uid="uid://bmryc8exrvum8" path="res://assets/music/vg-jump.wav" id="4_e6tc2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0aba"]
 atlas = ExtResource("1_tqm6u")
@@ -208,3 +209,7 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(43.75, 54)
 shape = SubResource("CapsuleShape2D_tqm6u")
+
+[node name="Jump_sound_effect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_e6tc2")
+volume_db = -13.867
